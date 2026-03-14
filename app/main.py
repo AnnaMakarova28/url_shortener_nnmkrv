@@ -11,8 +11,20 @@ from app.db.session import Base, engine, get_db
 from app.models.link import Link
 from app.services.cache import get_original_url_from_cache, set_original_url_to_cache
 
+from contextlib import asynccontextmanager
 
-Base.metadata.create_all(bind=engine)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    Base.metadata.create_all(bind=engine)
+    yield
+
+
+app = FastAPI(
+    title="URL Shortener API",
+    version="1.0.0",
+    lifespan=lifespan,
+)
 
 app = FastAPI(
     title="URL Shortener API",

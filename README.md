@@ -152,6 +152,16 @@ Redis используется для:
 
 ---
 
-# Автор
+# Тестирование
 
-Anna Makarova
+Нагрузочное тестирование проводилось с использованием Locust.
+Количество пользователей: 10
+Ramp up: 2 users/sec
+Endpoint: POST /links/shorten
+
+![Locust load test](images/locust_tests.png)
+
+### Test Coverage
+
+Coverage report:  
+`htmlcov/index.html`
