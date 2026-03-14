@@ -91,14 +91,14 @@ GET /links/project/{project_name}
 
 ### 1. Клонировать репозиторий
 
-```
-git clone https://github.com/YOUR_USERNAME/url-shortener-api.git
-cd url-shortener-api
+```bash
+git clone https://github.com/AnnaMakarova28/url_shortener_nnmkrv.git
+cd url_shortener_nnmkrv
 ```
 
-### 2. Запустить Docker
+### 2. Запустить сервис через Docker
 
-```
+```bash
 docker compose up --build
 ```
 
@@ -106,6 +106,36 @@ docker compose up --build
 
 ```
 http://localhost:8000/docs
+```
+
+### 4. Остановить контейнеры
+
+```bash
+docker compose down
+```
+
+---
+
+# Запуск тестов
+
+### Запуск всех тестов
+
+```bash
+pytest tests
+```
+
+### Проверка покрытия
+
+```bash
+coverage run -m pytest tests
+coverage html
+coverage report
+```
+
+HTML-отчёт покрытия находится в:
+
+```
+htmlcov/index.html
 ```
 
 ---
