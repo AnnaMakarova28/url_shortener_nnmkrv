@@ -189,9 +189,17 @@ Redis используется для:
 Ramp up: 2 users/sec
 Endpoint: POST /links/shorten
 
+Результаты:
+- Requests: 1480
+- Failures: 0
+- RPS: ~26
+- Median latency: 350 ms
+- 95 percentile: 760 ms
 ![Locust load test](images/locust_tests.png)
 
 ### Test Coverage
 
 Coverage report:  
 `htmlcov/index.html`
+
+coverage = 90%
